@@ -7,9 +7,10 @@ import org.springframework.stereotype.Component;
 import guru.springframework.spring5webapp.model.Author;
 import guru.springframework.spring5webapp.model.Book;
 import guru.springframework.spring5webapp.model.Publisher;
-import guru.springframework.spring5webapp.model.repositories.AuthorRepository;
-import guru.springframework.spring5webapp.model.repositories.BookRepository;
-import guru.springframework.spring5webapp.model.repositories.PublisherRepository;
+import guru.springframework.spring5webapp.repositories.AuthorRepository;
+import guru.springframework.spring5webapp.repositories.BookRepository;
+import guru.springframework.spring5webapp.repositories.PublisherRepository;
+
 
 @Component
 public class DevBootstrap implements ApplicationListener<ApplicationContextEvent>{
