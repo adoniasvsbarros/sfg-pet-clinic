@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.adoniasbarros</groupId>
-	<artifactId>di-demo</artifactId>
+	<artifactId>di-demo-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>di-demo</name>
 	<description>Dem of DI options in Spring</description>
