@@ -45,7 +45,7 @@
 	</build>
 	
 	<scm>
-		<developerConnection>scm:git:https://github.com/adoniasvsbarros/SpringFrameworkBeginnerToGuru.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:adoniasvsbarros/SpringFrameworkBeginnerToGuru.git</developerConnection>
 	  <tag>sfg-pet-clinic-0.0.1</tag>
   </scm>
 </project>
