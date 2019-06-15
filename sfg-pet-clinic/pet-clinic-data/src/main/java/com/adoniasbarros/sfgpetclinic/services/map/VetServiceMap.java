@@ -4,8 +4,9 @@ import java.util.Set;
 
 import com.adoniasbarros.sfgpetclinic.model.Vet;
 import com.adoniasbarros.sfgpetclinic.services.CrudService;
+import com.adoniasbarros.sfgpetclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 	
 	@Override
 	public Set<Vet> findAll() {
