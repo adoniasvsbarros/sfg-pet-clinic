@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - checkout
-	path: ~/SpringFrameworkBeginnerToGuru
+          path: ~/SpringFrameworkBeginnerToGuru
 
       # Download and cache dependencies
       - restore_cache:
