@@ -1,3 +1,4 @@
+package com.adoniasbarros.sfgpetclinic.services.map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
