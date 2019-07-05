@@ -49,9 +49,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<useSystemClassLoader>false</useSystemClassLoader>
-					<argLine>
-						--illegal-access=permit
-					</argLine>
+					<forkCount>0</forkCount>
 				</configuration>
 			</plugin>
 		</plugins>
