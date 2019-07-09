@@ -2,10 +2,13 @@ package com.adoniasbarros.sfgpetclinic.controllers;
 
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.anyLong;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.hamcrest.Matchers.*;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -73,6 +76,16 @@ public class OwnerControllerTest {
 		.andExpect(view().name("notImplemented"));
 	
 		verifyZeroInteractions(ownerService);
+	}
+	
+	@Test
+	void displayOwner() throws Exception {
+		when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1L).build());
+		
+		mockMvc.perform(get("/owners/123"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("owners/ownerDetails"))
+		.andExpect(model().attribute("owner", hasProperty("id", is(1L))));
 	}
 
 }
