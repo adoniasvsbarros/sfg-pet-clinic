@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.adoniasbarros.sfgpetclinic.model.Specialty;
+import com.adoniasbarros.sfgpetclinic.model.Speciality;
 import com.adoniasbarros.sfgpetclinic.model.Vet;
 import com.adoniasbarros.sfgpetclinic.services.SpecialtyService;
 import com.adoniasbarros.sfgpetclinic.services.VetService;
@@ -37,7 +37,7 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
 		if(object.getSpecialities().size() > 0) {
 			object.getSpecialities().forEach(specialty -> {
 				if(specialty.getId() == null) {
-					Specialty savedSpecialty = specialtyService.save(specialty);
+					Speciality savedSpecialty = specialtyService.save(specialty);
 					specialty.setId(savedSpecialty.getId());
 				}
 			});

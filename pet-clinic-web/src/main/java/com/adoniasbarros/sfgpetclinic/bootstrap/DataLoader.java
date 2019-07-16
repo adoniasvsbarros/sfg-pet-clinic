@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.adoniasbarros.sfgpetclinic.model.Owner;
 import com.adoniasbarros.sfgpetclinic.model.Pet;
 import com.adoniasbarros.sfgpetclinic.model.PetType;
-import com.adoniasbarros.sfgpetclinic.model.Specialty;
+import com.adoniasbarros.sfgpetclinic.model.Speciality;
 import com.adoniasbarros.sfgpetclinic.model.Vet;
 import com.adoniasbarros.sfgpetclinic.model.Visit;
 import com.adoniasbarros.sfgpetclinic.services.OwnerService;
@@ -57,6 +57,18 @@ public class DataLoader implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiology");
+        Speciality savedRadiology = specialtyService.save(radiology);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+        Speciality savedSurgery = specialtyService.save(surgery);
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("dentistry");
+        Speciality savedDentistry = specialtyService.save(dentistry);
+        
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
@@ -98,6 +110,22 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners....");
 
+        Vet vet1 = new Vet();
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Axe");
+        vet1.getSpecialities().add(savedRadiology);
+
+        vetService.save(vet1);
+
+        Vet vet2 = new Vet();
+        vet2.setFirstName("Jessie");
+        vet2.setLastName("Porter");
+        vet2.getSpecialities().add(savedSurgery);
+
+        vetService.save(vet2);
+
+        System.out.println("Loaded Vets....");
+        
 	}
 
 }

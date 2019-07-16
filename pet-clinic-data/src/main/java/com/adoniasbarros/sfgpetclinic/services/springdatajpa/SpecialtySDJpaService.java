@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.adoniasbarros.sfgpetclinic.model.Specialty;
+import com.adoniasbarros.sfgpetclinic.model.Speciality;
 import com.adoniasbarros.sfgpetclinic.repositories.SpecialtyRepository;
 import com.adoniasbarros.sfgpetclinic.services.SpecialtyService;
 
@@ -23,24 +23,24 @@ public class SpecialtySDJpaService implements SpecialtyService {
 	}
 
 	@Override
-	public Set<Specialty> findAll() {
-		Set<Specialty> specialties = new HashSet<>();
+	public Set<Speciality> findAll() {
+		Set<Speciality> specialties = new HashSet<>();
 		specialtyRepository.findAll().forEach(specialties::add);
 		return specialties;
 	}
 
 	@Override
-	public Specialty findById(Long id) {
+	public Speciality findById(Long id) {
 		return specialtyRepository.findById(id).orElse(null);
 	}
 
 	@Override
-	public Specialty save(Specialty object) {
+	public Speciality save(Speciality object) {
 		return specialtyRepository.save(object);
 	}
 
 	@Override
-	public void delete(Specialty object) {
+	public void delete(Speciality object) {
 		specialtyRepository.delete(object);
 
 	}

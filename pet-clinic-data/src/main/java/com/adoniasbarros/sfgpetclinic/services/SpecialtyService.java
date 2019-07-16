@@ -1,7 +1,7 @@
 package com.adoniasbarros.sfgpetclinic.services;
 
-import com.adoniasbarros.sfgpetclinic.model.Specialty;
+import com.adoniasbarros.sfgpetclinic.model.Speciality;
 
-public interface SpecialtyService extends CrudService<Specialty, Long>{
+public interface SpecialtyService extends CrudService<Speciality, Long>{
 
 }
